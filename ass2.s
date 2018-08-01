@@ -1,8 +1,5 @@
 ;[BITS 32]
 
-section .data
-str: db '/bin/sh'
-
 section .text
 global _start
 _start:
@@ -18,6 +15,6 @@ _start:
 	push	ebx		; '/bin/sh' string
 	push	edx		; null
 	mov	ecx, esp
-	mov	al, 0xb; syscall number
+	mov	al, 0xb		; syscall number
 	int 	80h
 
